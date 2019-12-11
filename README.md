@@ -1,2 +1,2 @@
 # archsimce
-ALgunos intentos de tidyverse con archivos simce
+Algunos intentos de tidyverse con archivos simce
