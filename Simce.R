@@ -46,7 +46,17 @@ ggplot(data = Curico_Talca, mapping = aes(x = nom_rbd, y = prom_mate2m_rbd)) +
 #####################################################################################################
 #####################################################################################################
 
+# Resumen por Región de los datos
 
+Simce2do %>%
+  filter(!is.na(prom_mate2m_rbd)) %>%
+  group_by(nom_reg_rbd) %>%
+  summarise(promedio_mate = mean(prom_mate2m_rbd),
+            mediana_mate = median(prom_mate2m_rbd)) %>%
+  ggplot(mapping = aes(x = nom_reg_rbd, y = promedio_mate)) +
+    geom_point() +
+  theme(axis.text = element_text(angle = 90,                            # Rotar 90 grados la etiqueta
+                                 size = 8))
 
 
 
